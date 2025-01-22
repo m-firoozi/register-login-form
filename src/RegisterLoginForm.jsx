@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import "./registerloginform.css";
 const RegisterLoginForm=() =>{
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -55,32 +55,38 @@ const RegisterLoginForm=() =>{
         }
     };
     return(
-        <div style={{maxWidth:"400px",margin:"0 auto",padding:"20px"}}>
+        <div className="container"> 
+        <div className="style" >
                 <h2>{isLogin ? "فرم ورود" : "فرم ثبت نام"}</h2>
                 {message && <p>{message}</p>}
                 <form onSubmit={handleSubmit}>
                 <div>
-                    <label>ایمیل:</label>
+                    <label>email:</label>
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{width:"100%",padding:"8px",marginBottom:"10px"}}/>
 
                 </div>
                 <div>
-                    <label>رمز عبور</label>
+                    <label>password:</label>
                     <input type="password" value={password} onChange={(e) =>setPassword(e.target.value)} required style={{width:"100%",padding:"8px",marginBottom:"10px"}}/>
 
                 </div>
-                <button type="submit" style={{padding:"10px 20px"}}>
+                
+            </form>
+            <div style={{margin:"20px"}}>
+            <button type="submit"  className="button-style">
                     {isLogin ? "ورود" : "ثبت نام"}
                 </button>
-            </form>
-            <button onClick={() =>{
+            <button  className="button-style" onClick={() =>{
                 setIsLogin(!isLogin);
                 setMessage("")
             }}
-            style={{marginTop:"10px",padding:"10px 20px"}}>
+            >
                 {isLogin ? "رفتن به فرم ثبت نام" : " رفتن به فرم ورود"}
             </button>
+            </div>
+        </div>
         </div>
     )
 };
+
  export default RegisterLoginForm;

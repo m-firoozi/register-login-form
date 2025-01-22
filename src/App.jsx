@@ -1,5 +1,5 @@
 import RegisterLoginForm from "./RegisterLoginForm"
-
+import "./registerloginform.css";
 function App() {
 
   return (
