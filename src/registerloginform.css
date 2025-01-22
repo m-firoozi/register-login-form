@@ -22,7 +22,8 @@
     border: 1px solid transparent;
     border-radius: 10px;
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
+    gap: 1rem;
     flex-direction: column;
     align-items: center;
     background: rgb(242,241,211);
@@ -32,7 +33,6 @@
 .button-style{
     width: 100px;
     padding:10px 0;
-    margin:0 10px;
     font-weight: bold;
     background: rgb(240,165,36);
     background: linear-gradient(0deg, rgba(240,165,36,0.9921218487394958) 95%, rgba(247,227,184,1) 100%);

@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import "./registerloginform.css";
+
+
 const RegisterLoginForm=() =>{
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -57,8 +59,8 @@ const RegisterLoginForm=() =>{
     return(
         <div className="container"> 
         <div className="style" >
-                <h2>{isLogin ? "فرم ورود" : "فرم ثبت نام"}</h2>
-                {message && <p>{message}</p>}
+                <h2 >{isLogin ? "فرم ورود" : "فرم ثبت نام"}</h2>
+                {message && <p style={{color:"orange"}}>{message}</p>}
                 <form onSubmit={handleSubmit}>
                 <div>
                     <label>email:</label>
@@ -70,12 +72,11 @@ const RegisterLoginForm=() =>{
                     <input type="password" value={password} onChange={(e) =>setPassword(e.target.value)} required style={{width:"100%",padding:"8px",marginBottom:"10px"}}/>
 
                 </div>
-                
-            </form>
-            <div style={{margin:"20px"}}>
-            <button type="submit"  className="button-style">
+                <button type="submit"  className="button-style">
                     {isLogin ? "ورود" : "ثبت نام"}
                 </button>
+            </form>
+            
             <button  className="button-style" onClick={() =>{
                 setIsLogin(!isLogin);
                 setMessage("")
@@ -83,7 +84,7 @@ const RegisterLoginForm=() =>{
             >
                 {isLogin ? "رفتن به فرم ثبت نام" : " رفتن به فرم ورود"}
             </button>
-            </div>
+            
         </div>
         </div>
     )
